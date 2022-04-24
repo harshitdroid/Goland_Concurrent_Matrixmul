@@ -126,6 +126,7 @@ func main() {
 	switch input {
 	case 1:
 		fallthrough
+
 	case 2:
 		println("Sequential Simulation")
 		for runs < 10 {
