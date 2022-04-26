@@ -22,6 +22,7 @@ func fillmatA(wg *sync.WaitGroup, id int) {
 		}
 	}
 }
+
 func fillmatB(wg *sync.WaitGroup, id int) {
 	defer wg.Done()
 	for i := 0; i < len(matrixB); i++ {
@@ -30,6 +31,7 @@ func fillmatB(wg *sync.WaitGroup, id int) {
 		}
 	}
 }
+
 func fillmatD(wg *sync.WaitGroup, id int) {
 	defer wg.Done()
 	for i := 0; i < len(matrixD); i++ {
@@ -38,6 +40,7 @@ func fillmatD(wg *sync.WaitGroup, id int) {
 		}
 	}
 }
+
 func fillmatE(wg *sync.WaitGroup, id int) {
 	defer wg.Done()
 	for i := 0; i < len(matrixE); i++ {
@@ -94,7 +97,8 @@ func concurrentMatrixMult() {
 	}()
 	wg.Wait()
 }
-func displaymat(b [500][500]int) {
+
+func displayMat(b [500][500]int) {
 	for i := 0; i < 500; i++ {
 		for j := 0; j < 500; j++ {
 			print(b[i][j])
@@ -102,6 +106,7 @@ func displaymat(b [500][500]int) {
 		println()
 	}
 }
+
 func main() {
 	var wg sync.WaitGroup
 	wg.Add(4)
